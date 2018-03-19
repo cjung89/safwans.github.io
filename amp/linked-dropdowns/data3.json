@@ -8,17 +8,13 @@
             {
               "name": "Sydney",
               "neighborhoods": [
-                  "A",
-                  "B",
-                  "C"
+                {"name":"A"]}
               ]
             },
             {
               "name": "Brisbane",
               "neighborhoods": [
-                  "E",
-                  "F",
-                  "G"
+                {"name":"E"}
               ]
             }
             
