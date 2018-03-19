@@ -63,7 +63,7 @@
     <template type="amp-mustache">
       <label for="country">Country:</label>
       <select id="country" on="
-        change:
+        input-debounded::
           AMP.setState({
             cities: dropdown.items[0].countries.filter(x => x.name == event.value)[0]
           })"
@@ -79,7 +79,7 @@
     <template type="amp-mustache">
       <label for="city">City:</label>
       <select [disabled]="!cities" disabled id="city" on=
-              "change:
+              "input-debounded:
           		AMP.setState({
             	neighborhoods: dropdown.items[0].countries[0].cities[0]
           	})">
