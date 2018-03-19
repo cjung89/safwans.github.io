@@ -95,7 +95,7 @@
       <select [disabled]="!neighborhood" disabled id="neighborhood">
         {{^neighborhood}}<option value=""></option>{{/neighborhood}}
         {{#neighborhood.0}}<option value="">Choose a neighborhood</option>{{/neighborhood.0}}
-        {{#neighborhood}}<option value="{{.}}">{{.}}</option>{{/neighborhood}}
+        {{#neighborhood}}<option value="{{neighborhood[0]}}">{{neighborhood[0]}}</option>{{/neighborhood}}
       </select>
     </template>
 </amp-list>
