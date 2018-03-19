@@ -92,10 +92,10 @@
 <amp-list height="25" layout="fixed-height"[src]="neighborhoods || 'data3.json'" src="data3.json">
     <template type="amp-mustache">
       <label for="neighborhood">neighborhood:</label>
-      <select [disabled]="!neighborhood" disabled id="neighborhood">
-        {{^neighborhood}}<option value=""></option>{{/neighborhood}}
-        {{#neighborhood.0}}<option value="">Choose a neighborhood</option>{{/neighborhood.0}}
-        {{#neighborhood}}<option value="{{.}}">{{.}}</option>{{/neighborhood}}
+      <select [disabled]="!neighborhoods" disabled id="neighborhoods">
+        {{^neighborhoods}}<option value=""></option>{{/neighborhoods}}
+        {{#neighborhoods.0}}<option value="">Choose a neighborhood</option>{{/neighborhoods.0}}
+        {{#neighborhoods}}<option value="{{.}}">{{.}}</option>{{/neighborhoods}}
       </select>
     </template>
 </amp-list>
