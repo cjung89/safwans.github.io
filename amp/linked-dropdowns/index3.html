@@ -91,7 +91,7 @@
 </amp-list>
 <amp-list height="25" layout="fixed-height" [src]="cities || 'https://ampbyexample.com/json/linked_dropdowns.json'" src="https://ampbyexample.com/json/linked_dropdowns.json">
     <template type="amp-mustache">
-      <label for="city">neighborhood:</label>
+      <label for="neighborhood">neighborhood:</label>
       <select [disabled]="!neighborhood" disabled id="neighborhood">
         {{^neighborhood}}<option value=""></option>{{/neighborhood}}
         {{#neighborhood.0}}<option value="">Choose a neighborhood</option>{{/neighborhood.0}}
