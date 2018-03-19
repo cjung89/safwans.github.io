@@ -65,7 +65,7 @@
       <select id="country" on="
         input-debounced:
           AMP.setState({
-            citystate: dropdown.items[0].countries.filter(x => x.name == event.value)[0]
+            cities: dropdown.items[0].countries.filter(x => x.name == event.value)[0]
           })"
       >
         <option value="">Choose a country</option>
@@ -75,18 +75,18 @@
       </select>
     </template>
 </amp-list>
-<amp-list height="25" layout="fixed-height" [src]="citystate || 'data3.json'" src="data3.json">
+<amp-list height="25" layout="fixed-height" [src]="cities || 'data3.json'" src="data3.json">
     <template type="amp-mustache">
       <label for="city">City:</label>
-      <select [disabled]="!citystate" disabled id="city" on="
+      <select [disabled]="!cities" disabled id="city" on="
         input-debounced:
           AMP.setState({
             neighborhoodstate: dropdown.items[0].countries[0].cities[0]
           })"
         >
-        {{^citystate}}<option value=""></option>{{/citystate}}
-        {{#citystate.0}}<option value="">Choose a city</option>{{/citystate.0}}
-        {{#citystate}}<option value="{{name}}">{{name}}</option>{{/citystate}}
+        {{^cities}}<option value=""></option>{{/cities}}
+        {{#cities.0}}<option value="">Choose a city</option>{{/cities.0}}
+        {{#cities}}<option value="{{name}}">{{name}}</option>{{/cities}}
       </select>
     </template>
 </amp-list>
