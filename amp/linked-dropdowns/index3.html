@@ -81,7 +81,7 @@
       <select [disabled]="!cities" disabled id="city" on=
               "input-debounced:
           		AMP.setState({
-            	neighborhoods: dropdown.items[0].countries[0].cities[0]
+            	cities: dropdown.items[0].countries[0].cities[0]
           	})">
         {{^cities}}<option value=""></option>{{/cities}}
         {{#cities.0}}<option value="">Choose a city</option>{{/cities.0}}
@@ -89,7 +89,7 @@
       </select>
     </template>
 </amp-list>
-  <!--
+
 <amp-list height="25" layout="fixed-height" [src]="neighborhoods || 'data3.json'" src="data3.json">
     <template type="amp-mustache">
       <label for="neighborhood">neighborhood:</label>
@@ -101,7 +101,7 @@
     </template>
 </amp-list>
 <amp-state id="dropdown" src="data3.json"></amp-state>
--->
+
 </div>
 
 </body>
