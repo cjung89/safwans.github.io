@@ -81,7 +81,7 @@
       <select [disabled]="!cities" disabled id="city" on=
               "change:
           		AMP.setState({
-            	neighborhood: dropdown.items[0].countries[0].cities[0]
+            	neighborhood: dropdown.items[0].countries[0].cities[0].neighborhoods
           	})">
         {{^cities}}<option value=""></option>{{/cities}}
         {{#cities.0}}<option value="">Choose a city</option>{{/cities.0}}
