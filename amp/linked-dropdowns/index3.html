@@ -59,7 +59,7 @@
   and it renders its template using the data in the `cities` array.
   -->
 <div>
-<amp-list height="25" layout="fixed-height" src="https://ampbyexample.com/json/linked_dropdowns.json">
+<amp-list height="25" layout="fixed-height" src="data3.json">
     <template type="amp-mustache">
       <label for="country">Country:</label>
       <select id="country" on="
@@ -75,7 +75,7 @@
       </select>
     </template>
 </amp-list>
-<amp-list height="25" layout="fixed-height" [src]="cities || 'https://ampbyexample.com/json/linked_dropdowns.json'" src="https://ampbyexample.com/json/linked_dropdowns.json">
+<amp-list height="25" layout="fixed-height" [src]="cities || 'data3.json'" src="data3.json">
     <template type="amp-mustache">
       <label for="city">City:</label>
       <select [disabled]="!cities" disabled id="city" on=
@@ -89,7 +89,7 @@
       </select>
     </template>
 </amp-list>
-<amp-list height="25" layout="fixed-height" [src]="cities || 'https://ampbyexample.com/json/linked_dropdowns.json'" src="https://ampbyexample.com/json/linked_dropdowns.json">
+<amp-list height="25" layout="fixed-height"[src]="cities || 'data3.json'" src="data3.json">
     <template type="amp-mustache">
       <label for="neighborhood">neighborhood:</label>
       <select [disabled]="!neighborhood" disabled id="neighborhood">
