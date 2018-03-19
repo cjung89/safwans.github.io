@@ -78,11 +78,7 @@
 <amp-list height="25" layout="fixed-height" [src]="cities || 'data3.json'" src="data3.json">
     <template type="amp-mustache">
       <label for="city">City:</label>
-      <select [disabled]="!cities" disabled id="city" on=
-              "input-debounced:
-          		AMP.setState({
-            	neighborhoods: dropdown.items[0].countries[0].cities[0]
-          	})">
+      <select [disabled]="!cities" disabled id="city" >
         {{^cities}}<option value=""></option>{{/cities}}
         {{#cities.0}}<option value="">Choose a city</option>{{/cities.0}}
         {{#cities}}<option value="{{name}}">{{name}}</option>{{/cities}}
