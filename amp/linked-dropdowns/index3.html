@@ -29,7 +29,6 @@
   <style amp-custom>
     label {
       font-weight: bold;
-      height: 40px;
     }
 
     [role="listitem"] {
@@ -42,25 +41,8 @@
 
     amp-list {
       margin: 10px 20px;
-      min-width: 340px;
+      min-width: 240px;
     }
-    select {
-      height: 40px;
-      border: 1px solid grey;
-    }
-      nav {
-    background-color: rgb(153, 0, 0);
-    color: rgb(255, 255, 255);
-    min-height: 3rem;
-    font-size: 12px;
-    text-align: center;
-  }
-  
-  .page {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid blue;
-  }
 
   </style>
 </head>
@@ -76,60 +58,48 @@
   `cities` state value. This updates second `<amp-list>`'s `[src]` binding,
   and it renders its template using the data in the `cities` array.
   -->
-<nav> Rey Demos </nav>
-<div class="page">
-<h2> Dynamic Dropdown - Three Levels </h2>
-
-<amp-list height="40" layout="fixed-height" src="data3.json">
+<div>
+<amp-list height="25" layout="fixed-height" src="https://ampbyexample.com/json/linked_dropdowns.json">
     <template type="amp-mustache">
       <label for="country">Country:</label>
       <select id="country" on="
         change:
           AMP.setState({
-            sc: event.value, cities: dropdown.items[0].countries.filter(x => x.name == event.value)[0]
+            cities: dropdown.items[0].countries.filter(x => x.name == event.value)[0]
           })"
       >
         <option value="">Choose a country</option>
         {{#countries}}
-        <option value="{{name}}">{{name}}</option> 
+          <option value="{{name}}">{{name}}</option>
         {{/countries}}
       </select>
     </template>
 </amp-list>
-
-<amp-list height="40" layout="fixed-height" [src]="cities || 'data3.json'" src="data3.json">
+<amp-list height="25" layout="fixed-height" [src]="cities || 'https://ampbyexample.com/json/linked_dropdowns.json'" src="https://ampbyexample.com/json/linked_dropdowns.json">
     <template type="amp-mustache">
-      <label for="city">City</label>
-      <select [disabled]="!cities" disabled id="city"
-      on="
-        change:
-          AMP.setState({
-            scc: sc
-          })"
-      >
-      {{^cities}}
-        <option value=""></option>
-      {{/cities}} 
-      {{#cities.0}}
-        <option value="">Choose a city</option>
-      {{/cities.0}} 
-      
-      {{#cities}}
-        <option value="{{name}}">{{name}}</option>
-      {{/cities}}
-      
+      <label for="city">City:</label>
+      <select [disabled]="!cities" disabled id="city" on=
+              "change:
+          		AMP.setState({
+            	neighborhood: dropdown.items[0].countries.filter(x => x.name == event.value)[0]
+          	})">
+        {{^cities}}<option value=""></option>{{/cities}}
+        {{#cities.0}}<option value="">Choose a city</option>{{/cities.0}}
+        {{#cities}}<option value="{{.}}">{{.}}</option>{{/cities}}
       </select>
     </template>
 </amp-list>
-
-
-<amp-state id="dropdown" src="data3.json"></amp-state>
-</div>
-<div>
+<amp-list height="25" layout="fixed-height" [src]="cities || 'https://ampbyexample.com/json/linked_dropdowns.json'" src="https://ampbyexample.com/json/linked_dropdowns.json">
     <template type="amp-mustache">
-    {{sc}}
+      <label for="city">neighborhood:</label>
+      <select [disabled]="!neighborhood" disabled id="neighborhood">
+        {{^neighborhood}}<option value=""></option>{{/neighborhood}}
+        {{#neighborhood.0}}<option value="">Choose a neighborhood</option>{{/neighborhood.0}}
+        {{#neighborhood}}<option value="{{.}}">{{.}}</option>{{/neighborhood}}
+      </select>
     </template>
-    <p [text]="'SC ' + sc"> Country </p>
+</amp-list>
+<amp-state id="dropdown" src="https://ampbyexample.com/json/linked_dropdowns.json"></amp-state>
 </div>
 
 </body>
