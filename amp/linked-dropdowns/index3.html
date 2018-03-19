@@ -85,7 +85,7 @@
           	})">
         {{^cities}}<option value=""></option>{{/cities}}
         {{#cities.0}}<option value="">Choose a city</option>{{/cities.0}}
-        {{#cities}}<option value="{{.}}">{{.}}</option>{{/cities}}
+        {{#cities}}<option value="{{cities.name}}">{{cities.name}}</option>{{/cities}}
       </select>
     </template>
 </amp-list>
@@ -95,7 +95,7 @@
       <select [disabled]="!neighborhoods" disabled id="neighborhoods">
         {{^neighborhoods}}<option value=""></option>{{/neighborhoods}}
         {{#neighborhoods.0}}<option value="">Choose a neighborhood</option>{{/neighborhoods.0}}
-        {{#neighborhoods}}<option value="{{.}}">{{.}}</option>{{/neighborhoods}}
+        {{#neighborhoods}}<option value="{{neighborhoods.name}}">{{neighborhoods.name}}</option>{{/neighborhoods}}
       </select>
     </template>
 </amp-list>
