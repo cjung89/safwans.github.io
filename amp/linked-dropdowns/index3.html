@@ -65,7 +65,7 @@
       <select id="country" on="
         input-debounced:
           AMP.setState({
-            cities: dropdown.items[0].countries.filter(x => x.name == event.value)[0]
+            citystate: dropdown.items[0].countries.filter(x => x.name == event.value)[0]
           })"
       >
         <option value="">Choose a country</option>
